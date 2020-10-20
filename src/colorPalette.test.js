@@ -1,5 +1,5 @@
 const { test } = require("@jest/globals");
-const ColorPalette = require("./");
+const { ColorPalette } = require("./colorPalette");
 const colors = [
   { name: "curious", value: "#25a2d8", group: "blue" },
   { name: "white", value: "#fefefe", group: "white", reverse: true },
