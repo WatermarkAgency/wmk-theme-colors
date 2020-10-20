@@ -78,23 +78,23 @@ export class ColorPalette {
     });
     const reduced = {};
     mappedColors.reduce((a, b) => {
-      const ret = { name: b.name, group: b.group, color: b.color };
-      if (b.primary) {
+      const ret = { name: a.name, group: a.group, color: a.color };
+      if (a.primary) {
         reduced.primary = ret;
       }
-      if (b.secondary) {
+      if (a.secondary) {
         reduced.secondary = ret;
       }
-      if (b.text) {
+      if (a.text) {
         reduced.text = ret;
       }
-      if (b.reverse) {
+      if (a.reverse) {
         reduced.reverse = ret;
       }
-      if (b.accent) {
+      if (a.accent) {
         reduced.accent = ret;
       }
-      reduced[b.name] = ret;
+      reduced[a.name] = ret;
     });
     return reduced;
   }
