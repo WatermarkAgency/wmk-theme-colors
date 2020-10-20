@@ -1,7 +1,7 @@
-const get = require("lodash/get");
-const Color = require("color");
+import Color from "color";
+import get from "lodash/get";
 
-class ColorPalette {
+export default class ColorPalette {
   constructor(colors) {
     this.colors = this._setColors(colors);
   }
@@ -99,4 +99,3 @@ class ColorPalette {
     return reduced;
   }
 }
-module.exports = ColorPalette;
