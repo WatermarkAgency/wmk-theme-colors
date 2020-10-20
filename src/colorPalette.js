@@ -76,26 +76,29 @@ export class ColorPalette {
         reverse,
       };
     });
-    const reduced = {};
-    mappedColors.reduce((a, b) => {
-      const ret = { name: a.name, group: a.group, color: a.color };
-      if (a.primary) {
-        reduced.primary = ret;
+    return mappedColors.reduce((total, amount) => {
+      const ret = {
+        name: amount.name,
+        group: amount.group,
+        color: amount.color,
+      };
+      if (amount.primary) {
+        total.primary = ret;
       }
-      if (a.secondary) {
-        reduced.secondary = ret;
+      if (amount.secondary) {
+        total.secondary = ret;
       }
-      if (a.text) {
-        reduced.text = ret;
+      if (amount.text) {
+        total.text = ret;
       }
-      if (a.reverse) {
-        reduced.reverse = ret;
+      if (amount.reverse) {
+        total.reverse = ret;
       }
-      if (a.accent) {
-        reduced.accent = ret;
+      if (amount.accent) {
+        total.accent = ret;
       }
-      reduced[a.name] = ret;
-    });
-    return reduced;
+      total[amount.name] = ret;
+      return total;
+    }, {});
   }
 }
