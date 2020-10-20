@@ -5,6 +5,24 @@ class ColorPalette {
   constructor(colors) {
     this.colors = this._setColors(colors);
   }
+  // returns a shade or tint of given named color
+  getHover(name, amount) {
+    const baseColor = this.getColor(name);
+    const amt = amount ? amount : 0.2;
+    if (!baseColor) {
+      return undefined;
+    } else {
+      if (baseColor.isLight()) {
+        return new Color(baseColor.darken(amt));
+      } else {
+        return new Color(baseColor.lighten(amt));
+      }
+    }
+  }
+  hover(name, amount) {
+    const hover = this.getHover(name, amount);
+    return hover.hex();
+  }
   primary() {
     return get(this.colors, `primary`);
   }

@@ -1,4 +1,4 @@
-# wmk-theme-colors
+# wmk-color-palette
 
 
 Create a color palatte by passing an array of objects:
@@ -9,7 +9,7 @@ const colors = [
   { name: "black", value: "#0a0a0a", group: "black", text: true },
   { name: "saffron", value: "#F7D43F", group: "yellow", accent: true },
   { name: "matisse", value: "#197FAA", group: "blue" },
-  { name: "denim", valu: "#1585C7", group: "blue", primary: true },
+  { name: "denim", value: "#1585C7", group: "blue", primary: true },
   { name: "blizzard", value: "#A7D6F0", group: "blue" },
   { name: "sail", value: "#a9ddfa", group: "blue", secondary: true },
   { name: "nile", value: "#194E50", group: "green" },
