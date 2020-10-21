@@ -1,4 +1,4 @@
-const { test } = require("@jest/globals");
+const { test, expect } = require("@jest/globals");
 const { ColorPalette } = require("./colorPalette");
 const colors = [
   { name: "curious", value: "#25a2d8", group: "blue" },
@@ -61,4 +61,12 @@ test("Sets correct reverse", () => {
   const pri = theme.reverse();
   const org = theme.colors.white;
   expect(pri.color.hex()).toBe(org.color.hex());
+});
+
+test("creates a shade or tint of color, compare with default", () => {
+  const defaultOpacity = 0.2;
+  expect(theme.hover("primary", defaultOpacity)).toBe("#209EE8");
+  expect(theme.hover("secondary", defaultOpacity)).toBe("#5ABEF5");
+  expect(theme.hover("primary")).toBe("#209EE8");
+  expect(theme.hover("secondary")).toBe("#5ABEF5");
 });

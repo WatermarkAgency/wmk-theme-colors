@@ -1,6 +1,6 @@
 {
   "name": "wmk-color-palette",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "description": "Color palette class uses npm color",
   "main": "src/index.js",
   "scripts": {
