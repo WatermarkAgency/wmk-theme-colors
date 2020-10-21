@@ -1,5 +1,6 @@
 import get from "lodash/get";
 import Color from "color";
+import { getColorName } from "./nameThatColor";
 
 export class ColorPalette {
   constructor(colors) {
@@ -59,7 +60,8 @@ export class ColorPalette {
   }
   _setColors(colArr) {
     const mappedColors = colArr.map((col) => {
-      const { name, value, group } = col;
+      const { value, group } = col;
+      const name = get(col, "name", getColorName(value));
       const primary = get(col, "primary", false);
       const secondary = get(col, "secondary", false);
       const accent = get(col, "accent", false);
