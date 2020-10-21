@@ -67,6 +67,7 @@ export class ColorPalette {
       const accent = get(col, "accent", false);
       const text = get(col, "text", false);
       const reverse = get(col, "reverse", false);
+      const tertiary = get(col, "tertiary", false);
       return {
         name,
         group,
@@ -76,6 +77,7 @@ export class ColorPalette {
         accent,
         text,
         reverse,
+        tertiary,
       };
     });
     return mappedColors.reduce((total, amount) => {
@@ -98,6 +100,9 @@ export class ColorPalette {
       }
       if (amount.accent) {
         total.accent = ret;
+      }
+      if (amount.tertiary) {
+        total.tertiary = ret;
       }
       total[amount.name] = ret;
       return total;
