@@ -33,11 +33,17 @@ export class ColorPalette {
   accent() {
     return get(this.colors, `accent`);
   }
+  coaccent() {
+    return get(this.colors, `coaccent`);
+  }
   text() {
     return get(this.colors, `text`);
   }
   reverse() {
     return get(this.colors, `reverse`);
+  }
+  tertiary() {
+    return get(this.colors, `tertiary`);
   }
   hex(name) {
     const color = this.getColor(name);
@@ -68,6 +74,8 @@ export class ColorPalette {
       const text = get(col, "text", false);
       const reverse = get(col, "reverse", false);
       const tertiary = get(col, "tertiary", false);
+      const black = get(col, "black", false);
+      const coaccent = get(col, "coaccent", false);
       return {
         name,
         group,
@@ -78,6 +86,8 @@ export class ColorPalette {
         text,
         reverse,
         tertiary,
+        black,
+        coaccent,
       };
     });
     return mappedColors.reduce((total, amount) => {
@@ -95,14 +105,21 @@ export class ColorPalette {
       if (amount.text) {
         total.text = ret;
       }
+      if (amount.black) {
+        total.black = ret;
+      }
       if (amount.reverse) {
         total.reverse = ret;
+        total.white = ret;
       }
       if (amount.accent) {
         total.accent = ret;
       }
       if (amount.tertiary) {
         total.tertiary = ret;
+      }
+      if (amount.coaccent) {
+        total.coaccent = ret;
       }
       total[amount.name] = ret;
       return total;

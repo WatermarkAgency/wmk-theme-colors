@@ -1,5 +1,5 @@
 export default [
-  ["000000", "black"],
+  ["000000", "trueBlack"],
   ["000080", "navyBlue"],
   ["0000C8", "darkBlue"],
   ["0000FF", "blue"],
@@ -1564,5 +1564,5 @@ export default [
   ["FFFF99", "paleCanary"],
   ["FFFFB4", "portafino"],
   ["FFFFF0", "ivory"],
-  ["FFFFFF", "white"],
+  ["FFFFFF", "trueWhite"],
 ];
