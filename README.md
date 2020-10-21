@@ -78,4 +78,5 @@ These functions will return a Color object (made from npm color), so any of the 
 
 #### rgba(name)
 ```js
-    return 'rgba(string,alpha)
+    return 'rgba(string,alpha)'
+```
