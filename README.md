@@ -1,10 +1,10 @@
 # wmk-color-palette
 
 
-Create a color palatte by passing an array of objects:
+Create a color palatte by passing an array of objects. Colors passed without names will inherit names from NameThatColor.
 ```js
 const colors = [
-  { name: "curious", value: "#25a2d8", group: "blue" },
+  { value: "#25a2d8", group: "blue" },
   { name: "white", value: "#fefefe", group: "white", reverse: true },
   { name: "black", value: "#0a0a0a", group: "black", text: true },
   { name: "saffron", value: "#F7D43F", group: "yellow", accent: true },
@@ -46,7 +46,17 @@ These functions will return a Color object (made from npm color), so any of the 
 ```js
     return Color();
 ```
+#### tertiary()
+
+```js
+    return Color();
+```
 #### accent()
+
+```js
+    return Color();
+```
+#### coaccent()
 
 ```js
     return Color();
