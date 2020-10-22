@@ -87,9 +87,15 @@ test("creates a shade or tint of color, compare with default", () => {
 });
 
 test("gets a valid color object given CSS string", () => {
-  const expected = new Color(new Color("#E48C2B"));
+  const expected = new Color("#E48C2B");
   const test = theme.colorize("#E48C2B");
   expect(test.model).toBe(expected.model);
   expect(test.color).toStrictEqual(expected.color);
   expect(test.valpha).toBe(expected.valpha);
+});
+
+test("gets proper 0 alpha", () => {
+  const test = theme.rgba("black", 0);
+  const expected = "rgba(10, 10, 10, 0)";
+  expect(test).toBe(expected);
 });
