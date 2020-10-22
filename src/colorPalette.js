@@ -64,6 +64,9 @@ export class ColorPalette {
   getColor(name) {
     return get(this.colors, `${name}.color`);
   }
+  colorize(value) {
+    return new Color(value);
+  }
   _setColors(colArr) {
     const mappedColors = colArr.map((col) => {
       const { value, group } = col;

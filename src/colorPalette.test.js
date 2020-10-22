@@ -1,5 +1,6 @@
 const { test, expect } = require("@jest/globals");
 const { ColorPalette } = require("./colorPalette");
+const Color = require("color");
 const colors = [
   { value: "#fefefe", group: "white", reverse: true },
   { value: "#0a0a0a", group: "black", text: true, black: true },
@@ -83,4 +84,12 @@ test("creates a shade or tint of color, compare with default", () => {
   expect(theme.hover("secondary", defaultOpacity)).toBe("#5ABEF5");
   expect(theme.hover("primary")).toBe("#209EE8");
   expect(theme.hover("secondary")).toBe("#5ABEF5");
+});
+
+test("gets a valid color object given CSS string", () => {
+  const expected = new Color(new Color("#E48C2B"));
+  const test = theme.colorize("#E48C2B");
+  expect(test.model).toBe(expected.model);
+  expect(test.color).toStrictEqual(expected.color);
+  expect(test.valpha).toBe(expected.valpha);
 });
