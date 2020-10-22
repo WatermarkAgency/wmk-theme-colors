@@ -60,7 +60,7 @@ export class ColorPalette {
   }
   rgba(name, amount) {
     const color = this.getColor(name);
-    const amt = amount ? amount : get(color, `valpha`, 0.5);
+    const amt = amount === 0 || amount ? amount : get(color, `valpha`, 0.5);
     const str = color.rgb().string().split("");
     str.splice(3, 0, "a");
     str.splice(str.length - 1, 0, ", " + amt);
