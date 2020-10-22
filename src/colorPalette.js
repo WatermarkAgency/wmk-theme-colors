@@ -7,21 +7,26 @@ export class ColorPalette {
     this.colors = this._setColors(colors);
   }
   // returns a shade or tint of given named color
-  getHover(name, amount) {
+  getHover(name, amount, flip) {
     const baseColor = this.getColor(name);
     const amt = amount ? amount : 0.2;
+    const isFlip = flip ? true : false;
     if (!baseColor) {
       return undefined;
     } else {
       if (baseColor.isLight()) {
-        return new Color(baseColor.darken(amt));
+        return isFlip
+          ? new Color(baseColor.lighten(amt))
+          : new Color(baseColor.darken(amt));
       } else {
-        return new Color(baseColor.lighten(amt));
+        return isFlip
+          ? new Color(baseColor.darken(amt))
+          : new Color(baseColor.lighten(amt));
       }
     }
   }
-  hover(name, amount) {
-    const hover = this.getHover(name, amount);
+  hover(name, amount, flip) {
+    const hover = this.getHover(name, amount, flip);
     return hover.hex();
   }
   primary() {
