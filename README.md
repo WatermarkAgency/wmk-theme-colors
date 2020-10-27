@@ -1,7 +1,7 @@
 # wmk-color-palette
 
 ```sh
-npm install --save-dev wmk-theme-colors
+npm install --save-dev wmk-color-palette
 ```
 
 # ColorPalette
