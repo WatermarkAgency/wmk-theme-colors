@@ -26,8 +26,8 @@ export class NameThatColor {
     color = color.toUpperCase();
     if (color.length < 3 || color.length > 7)
       return ["#000000", "Invalid Color: " + color, false];
-    if (color.length % 3 == 0) color = "#" + color;
-    if (color.length == 4)
+    if (color.length % 3 === 0) color = "#" + color;
+    if (color.length === 4)
       color =
         "#" +
         color.substr(1, 1) +
@@ -52,7 +52,7 @@ export class NameThatColor {
       df = -1;
 
     for (var i = 0; i < this.names.length; i++) {
-      if (color == "#" + this.names[i][0])
+      if (color === "#" + this.names[i][0])
         return ["#" + this.names[i][0], this.names[i][1], true];
 
       ndf1 =
@@ -98,9 +98,9 @@ export class NameThatColor {
 
     h = 0;
     if (delta > 0) {
-      if (max == r && max != g) h += (g - b) / delta;
-      if (max == g && max != b) h += 2 + (b - r) / delta;
-      if (max == b && max != r) h += 4 + (r - g) / delta;
+      if (max === r && max !== g) h += (g - b) / delta;
+      if (max === g && max !== b) h += 2 + (b - r) / delta;
+      if (max === b && max !== r) h += 4 + (r - g) / delta;
       h /= 6;
     }
     return [parseInt(h * 255), parseInt(s * 255), parseInt(l * 255)];

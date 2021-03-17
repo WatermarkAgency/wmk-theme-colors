@@ -1,4 +1,4 @@
-export default [
+const allNames = [
   ["000000", "trueBlack"],
   ["000080", "navyBlue"],
   ["0000C8", "darkBlue"],
@@ -1566,3 +1566,5 @@ export default [
   ["FFFFF0", "ivory"],
   ["FFFFFF", "trueWhite"],
 ];
+
+export default allNames;
